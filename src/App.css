@@ -65,21 +65,3 @@ body,
   font-weight: 700;
   text-align: center;
 }
-
-.modal {
-  height: 60%;
-  width: 60%;
-  background-color: #e7e0c2;
-  border-radius: 16px;
-  padding: 0;
-}
-
-.modalBirdImage {
-  width: 100%;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-}
-
-.modalBirdName {
-  text-align: center;
-}

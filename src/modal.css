@@ -1,0 +1,101 @@
+.modal {
+  height: 465px;
+  width: 264px;
+  background-color: #e7e0c2;
+  border-radius: 16px;
+  padding: 0;
+  border: none;
+}
+
+.modal__top {
+  height: 70.9677419355%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.modalBirdName {
+  text-align: center;
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.6);
+}
+
+.modal__sounds {
+  height: 40%;
+  background-color: #e7e0c2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+  border-bottom-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom: 1px black solid;
+  border-left: 1px black solid;
+}
+
+.modal__bottom {
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.modal__bottom__birdName {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.modal__bottom__buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 20px;
+}
+
+#accept,
+#deny {
+  cursor: pointer;
+}
+
+#birdsong,
+#fact {
+  cursor: pointer;
+  transition: 0.2s ease-in-out 0s;
+}
+
+#birdsong:hover {
+  transform: scale(1.1);
+}
+
+#fact:hover {
+  transform: scale(1.1);
+}
+
+#accept:hover {
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+}
+
+#deny:hover {
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
