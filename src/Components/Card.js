@@ -6,13 +6,59 @@ export default function Card(props) {
   function openModal() {
     const modal = document.getElementById("modal" + props.id);
     modal.showModal();
-    playAudio();
+    playBirdsong();
   }
 
-  function playAudio() {
-    const audio = document.getElementById("audio" + props.id);
-    audio.play();
+  function hideModal() {
+    const modal = document.getElementById("modal" + props.id);
+    modal.close();
   }
+
+  function playBirdsong() {
+    const birdsong = document.getElementById("birdsong" + props.id);
+    // const birdsongIcon = document.getElementById("birdsong-icon" + props.id);
+
+    // birdsongIcon.className = "active";
+
+    if (birdsong.duration > 0 && !birdsong.paused) {
+      birdsong.pause();
+      // birdsongIcon.classList.remove("active");
+    } else {
+      birdsong.play();
+    }
+  }
+  function playFact() {
+    const fact = document.getElementById("fact" + props.id);
+    // const factIcon = document.getElementById("fact-icon" + props.id);
+
+    if (fact.duration > 0 && !fact.paused) {
+      fact.pause();
+      // fact.classList.remove("active");
+    } else {
+      fact.play();
+    }
+  }
+
+  function addFactActive() {
+    const factIcon = document.getElementById("fact-icon" + props.id);
+    factIcon.classList.add("active");
+  }
+
+  function removeFactActive() {
+    const factIcon = document.getElementById("fact-icon" + props.id);
+    factIcon.classList.remove("active");
+  }
+
+  function addBirdsongActive() {
+    const birdsongIcon = document.getElementById("birdsong-icon" + props.id);
+    birdsongIcon.classList.add("active");
+  }
+
+  function removeBirdsongActive() {
+    const birdsongIcon = document.getElementById("birdsong-icon" + props.id);
+    birdsongIcon.classList.remove("active");
+  }
+
   //   <Card
   //   name={deck[num].name}
   //   sciName={deck[num].sciName}
@@ -29,6 +75,14 @@ export default function Card(props) {
         id={props.id}
         img={props.img}
         birdsong={props.birdsong}
+        fact={props.fact}
+        playBirdsong={playBirdsong}
+        playFact={playFact}
+        hideModal={hideModal}
+        addBirdsongActive={addBirdsongActive}
+        removeBirdsongActive={removeBirdsongActive}
+        addFactActive={addFactActive}
+        removeFactActive={removeFactActive}
       />
       <div className="card" onClick={openModal}>
         <img className="card__image" src={props.img} />

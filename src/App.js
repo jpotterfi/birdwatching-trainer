@@ -43,6 +43,7 @@ function App() {
         img={deck[num].img}
         birdsong={deck[num].audio}
         prevPicked={deck[num].prevPicked}
+        fact={deck[num].fact}
       />
     );
   });

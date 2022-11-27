@@ -64,19 +64,19 @@ dialog::backdrop {
   cursor: pointer;
 }
 
-#birdsong,
-#fact {
+.birdsong-icon,
+.fact-icon {
   cursor: pointer;
-  transition: 0.2s ease-in-out 0s;
+  /* transition: 0.2s ease-in-out 0s; */
 }
 
-#birdsong:hover {
+/* .birdsong-icon:hover {
   transform: scale(1.1);
 }
 
-#fact:hover {
+.fact-icon:hover {
   transform: scale(1.1);
-}
+} */
 
 #accept:hover {
   animation: pulse 1s infinite;
@@ -84,6 +84,12 @@ dialog::backdrop {
 }
 
 #deny:hover {
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
+}
+
+.active {
+  cursor: pointer;
   animation: pulse 1s infinite;
   animation-timing-function: linear;
 }

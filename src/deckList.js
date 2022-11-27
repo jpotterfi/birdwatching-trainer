@@ -38,6 +38,26 @@ import Audio_Painted_Bunting from "./bird_sounds/painted_bunting.mp3";
 import Audio_Blue_Jay from "./bird_sounds/blue_jay.mp3";
 import Audio_Northern_Cardinal from "./bird_sounds/northern_cardinal.mp3";
 import Audio_Anhinga from "./bird_sounds/anhinga.mp3";
+import Fact_American_Robin from "./bird_facts/American_Robin.m4a";
+import Fact_Anhinga from "./bird_facts/Anhinga.m4a";
+import Fact_Atlantic_Puffin from "./bird_facts/Atlantic_Puffin.m4a";
+import Fact_Bald_Eagle from "./bird_facts/Bald_Eagle.m4a";
+import Fact_Baltimore_Oriole from "./bird_facts/Baltimore_Oriole.m4a";
+import Fact_Blue_Jay from "./bird_facts/Blue_Jay.m4a";
+import Fact_Great_Horned_Owl from "./bird_facts/Great_Horned_Owl.m4a";
+import Fact_Greater_Roadrunner from "./bird_facts/Greater_Roadrunner.m4a";
+import Fact_Mallard from "./bird_facts/Mallard.m4a";
+import Fact_Northern_Cardinal from "./bird_facts/Northern_Cardinal.m4a";
+import Fact_Northern_Flicker from "./bird_facts/Northern_Flicker.m4a";
+import Fact_Northern_Mockingbird from "./bird_facts/Northern_Mockingbird.m4a";
+import Fact_Painted_Bunting from "./bird_facts/Painted_Bunting.m4a";
+import Fact_Peregrine_Falcon from "./bird_facts/Peregrine_Falcon.m4a";
+import Fact_Rose_Breasted_Grosbeak from "./bird_facts/Rose_Breasted_Grosbeak.m4a";
+import Fact_Sandhill_Crane from "./bird_facts/Sandhill_Crane.m4a";
+import Fact_Short_Eared_Owl from "./bird_facts/Short_Eared_Owl.m4a";
+import Fact_Snowy_Egret from "./bird_facts/Snowy_Egret.m4a";
+import Fact_Trumpeter_Swan from "./bird_facts/Trumpeter_Swan.m4a";
+import Fact_Yellow_Crowned_Night_Heron from "./bird_facts/Yellow_Crowned_Night_Heron.m4a";
 
 export default {
   birdCards: [
@@ -47,6 +67,7 @@ export default {
       sciName: "Cardinalis cardinalis",
       img: Northern_Cardinal,
       audio: Audio_Northern_Cardinal,
+      fact: Fact_Northern_Cardinal,
       prevPicked: false,
     },
     {
@@ -55,6 +76,7 @@ export default {
       sciName: "Cygnus buccinator",
       img: Trumpeter_Swan,
       audio: Audio_Trumpeter_Swan,
+      fact: Fact_Trumpeter_Swan,
       prevPicked: false,
     },
     {
@@ -63,6 +85,7 @@ export default {
       sciName: "Haliaeetus leucocephalus",
       img: Bald_Eagle,
       audio: Audio_Bald_Eagle,
+      fact: Fact_Bald_Eagle,
       prevPicked: false,
     },
     {
@@ -71,6 +94,7 @@ export default {
       sciName: "Grus canadensis",
       img: Sandhill_Crane,
       audio: Audio_Sandhill_Crane,
+      fact: Fact_Sandhill_Crane,
       prevPicked: false,
     },
     {
@@ -79,6 +103,7 @@ export default {
       sciName: "Anhinga anhinga",
       img: Anhinga,
       audio: Audio_Anhinga,
+      fact: Fact_Anhinga,
       prevPicked: false,
     },
     {
@@ -87,6 +112,7 @@ export default {
       sciName: "Falco peregrinus",
       img: Peregrine_Falcon,
       audio: Audio_Peregrine_Falcon,
+      fact: Fact_Peregrine_Falcon,
       prevPicked: false,
     },
     {
@@ -95,6 +121,7 @@ export default {
       sciName: "Fratercula arctica",
       img: Atlantic_Puffin,
       audio: Audio_Atlantic_Puffin,
+      fact: Fact_Atlantic_Puffin,
       prevPicked: false,
     },
     {
@@ -103,6 +130,7 @@ export default {
       sciName: "Turdus migratorius",
       img: American_Robin,
       audio: Audio_American_Robin,
+      fact: Fact_American_Robin,
       prevPicked: false,
     },
     {
@@ -111,6 +139,7 @@ export default {
       sciName: "Geococcyx californianus",
       img: Greater_Roadrunner,
       audio: Audio_Greater_Roadrunner,
+      fact: Fact_Greater_Roadrunner,
       prevPicked: false,
     },
     {
@@ -119,6 +148,7 @@ export default {
       sciName: "Mimus polyglottos",
       img: Northern_Mockingbird,
       audio: Audio_Northern_Mockingbird,
+      fact: Fact_Northern_Mockingbird,
       prevPicked: false,
     },
     {
@@ -127,6 +157,7 @@ export default {
       sciName: "Nyctanassa violacea",
       img: Yellow_Crowned_Night_Heron,
       audio: Audio_Yellow_Crowned_Night_Heron,
+      fact: Fact_Yellow_Crowned_Night_Heron,
       prevPicked: false,
     },
     {
@@ -135,6 +166,7 @@ export default {
       sciName: "Cyanocitta cristata",
       img: Blue_Jay,
       audio: Audio_Blue_Jay,
+      fact: Fact_Blue_Jay,
       prevPicked: false,
     },
     {
@@ -143,6 +175,7 @@ export default {
       sciName: "Icterus galbula",
       img: Baltimore_Oriole,
       audio: Audio_Baltimore_Oriole,
+      fact: Fact_Baltimore_Oriole,
       prevPicked: false,
     },
     {
@@ -151,6 +184,7 @@ export default {
       sciName: "Pheucticus ludovicianus",
       img: Rose_Breasted_Grosbeak,
       audio: Audio_Rose_Breasted_Grosbeak,
+      fact: Fact_Rose_Breasted_Grosbeak,
       prevPicked: false,
     },
     {
@@ -159,6 +193,7 @@ export default {
       sciName: "Bubo virginianus",
       img: Great_Horned_Owl,
       audio: Audio_Great_Horned_Owl,
+      fact: Fact_Great_Horned_Owl,
       prevPicked: false,
     },
     {
@@ -167,6 +202,7 @@ export default {
       sciName: "Colaptes auratus",
       img: Northern_Flicker,
       audio: Audio_Northern_Flicker,
+      fact: Fact_Northern_Flicker,
       prevPicked: false,
     },
     {
@@ -175,6 +211,7 @@ export default {
       sciName: "Anas platyrhynchos",
       img: Mallard,
       audio: Audio_Mallard,
+      fact: Fact_Mallard,
       prevPicked: false,
     },
     {
@@ -183,6 +220,7 @@ export default {
       sciName: "Asio flammeus",
       img: Short_Eared_Owl,
       audio: Audio_Short_Eared_Owl,
+      fact: Fact_Short_Eared_Owl,
       prevPicked: false,
     },
     {
@@ -191,6 +229,7 @@ export default {
       sciName: "Passerina ciris",
       img: Painted_Bunting,
       audio: Audio_Painted_Bunting,
+      fact: Fact_Painted_Bunting,
       prevPicked: false,
     },
     {
@@ -199,6 +238,7 @@ export default {
       sciName: "Egretta thula",
       img: Snowy_Egret,
       audio: Audio_Snowy_Egret,
+      fact: Fact_Snowy_Egret,
       prevPicked: false,
     },
   ],
