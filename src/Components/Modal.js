@@ -4,24 +4,8 @@ import Birdsong from "../nonbird_images/birdsong.svg";
 import Fact from "../nonbird_images/fact.svg";
 
 export default function Modal(props) {
-  //   function hideModal() {
-  //     const modal = document.getElementById("modal" + props.id);
-  //     modal.close();
-  //   }
+  function correctFeedback() {}
 
-  //   function playAudio() {
-  //     const audio = document.getElementById("audio" + props.id);
-  //     if (audio.duration > 0 && !audio.paused) {
-  //       audio.pause();
-  //     } else {
-  //       audio.play();
-  //     }
-  //   }
-
-  //   function playFact() {
-  //     const fact = document.getElementById("fact" + props.id);
-  //     fact.play();
-  //   }
   return (
     <dialog className="modal" id={"modal" + props.id}>
       <section
@@ -60,9 +44,10 @@ export default function Modal(props) {
         </section>
       </section>
       <section className="modal__bottom">
-        <h1 className="modal__bottom__birdName">{props.birdName}</h1>
+        <h1 className="modal__bottom__birdName">{props.name}</h1>
         <div className="modal__bottom__buttons">
-          <img id="accept" src={Accept}></img>
+          <img id="accept" src={Accept} onClick={props.setPrevPicked}></img>
+
           <img id="deny" src={Deny} onClick={props.hideModal}></img>
         </div>
       </section>

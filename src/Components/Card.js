@@ -9,6 +9,14 @@ export default function Card(props) {
     playBirdsong();
   }
 
+  function evaluate() {
+    if (props.prevPicked) {
+      console.log("game over");
+    } else {
+      console.log("good choice");
+    }
+  }
+
   function hideModal() {
     const modal = document.getElementById("modal" + props.id);
     modal.close();
@@ -83,6 +91,8 @@ export default function Card(props) {
         removeBirdsongActive={removeBirdsongActive}
         addFactActive={addFactActive}
         removeFactActive={removeFactActive}
+        evaluate={evaluate}
+        setPrevPicked={props.setPrevPicked}
       />
       <div className="card" onClick={openModal}>
         <img className="card__image" src={props.img} />
