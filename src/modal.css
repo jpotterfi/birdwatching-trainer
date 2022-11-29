@@ -60,7 +60,8 @@ dialog::backdrop {
 }
 
 #accept,
-#deny {
+#deny,
+#refresh {
   cursor: pointer;
 }
 
@@ -109,4 +110,22 @@ dialog::backdrop {
   100% {
     transform: scale(1);
   }
+}
+
+#refresh {
+  width: 39px;
+  height: 39px;
+}
+
+.modal__bottom__refresharea {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+#refresh:hover {
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
 }

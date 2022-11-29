@@ -2,10 +2,9 @@ import Accept from "../nonbird_images/accept.svg";
 import Deny from "../nonbird_images/deny.svg";
 import Birdsong from "../nonbird_images/birdsong.svg";
 import Fact from "../nonbird_images/fact.svg";
+import Refresh from "../nonbird_images/refresh.svg";
 
 export default function Modal(props) {
-  function correctFeedback() {}
-
   return (
     <dialog className="modal" id={"modal" + props.id}>
       <section
@@ -44,12 +43,25 @@ export default function Modal(props) {
         </section>
       </section>
       <section className="modal__bottom">
-        <h1 className="modal__bottom__birdName">{props.name}</h1>
-        <div className="modal__bottom__buttons">
-          <img id="accept" src={Accept} onClick={props.setPrevPicked}></img>
+        {props.gameOver !== true ? (
+          <h1 className="modal__bottom__birdName">{props.name}</h1>
+        ) : (
+          <h1 className="modal__bottom__gameOverMessage">
+            You've already spotted a {props.name}!
+          </h1>
+        )}
+        {props.gameOver !== true ? (
+          <div className="modal__bottom__buttons">
+            <img id="accept" src={Accept} onClick={props.evaluate}></img>
 
-          <img id="deny" src={Deny} onClick={props.hideModal}></img>
-        </div>
+            <img id="deny" src={Deny} onClick={props.hideModal}></img>
+          </div>
+        ) : (
+          <div className="modal__bottom__refresharea">
+            <img id="refresh" src={Refresh}></img>
+            <div id="refresh-message">Try Again?</div>
+          </div>
+        )}
       </section>
     </dialog>
   );

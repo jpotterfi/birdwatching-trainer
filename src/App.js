@@ -12,9 +12,23 @@ function App() {
 
   const [count, setCount] = React.useState(0);
 
-  const [message, setMessage] = React.useState(
-    "Welcome to Bird Trainer! Pick any bird."
-  );
+  const [gameOver, setGameOver] = React.useState(true);
+
+  function evaluate(prevPicked, id) {
+    console.log(prevPicked);
+    if (gameOver === false && prevPicked == false) {
+      console.log("this was a new bird");
+      setPrevPicked(id);
+    }
+    if (gameOver === false && prevPicked === true) {
+      console.log("this was an old bird");
+      console.log(id);
+      setGameOver(true);
+    }
+    if (gameOver === true) {
+      console.log("reset game");
+    }
+  }
 
   function setPrevPicked(id) {
     const modal = document.getElementById("modal" + id);
@@ -47,38 +61,6 @@ function App() {
     header.classList.add("correct"); //begins header animation
     const messagearea = document.getElementById("messagearea");
     messagearea.classList.add("correctMessage");
-
-    let randInt = Math.floor(Math.random() * 6);
-
-    if (count + 1 == 5) {
-      setMessage(
-        "You found five unique birds in a row! Greatness awaits you, Fledgling!"
-      );
-    } else if (count + 1 == 10) {
-      setMessage(
-        "Wow! You've discovered 10 new birds! This High Flyer certainly isn't winging it."
-      );
-    } else if (count + 1 == 15) {
-      setMessage(
-        "At 15 birds, this Bird Watcher has both a keen eye and a mind like a steel trap!"
-      );
-    } else if (count + 1 == 20) {
-      setMessage(
-        "You truly are a rare bird, Rare Avis. You identified all 20 birds. Take your quest further -- currently there are 10,824 species of birds in the world."
-      );
-    } else if (randInt == 0) {
-      setMessage("You've discovered another bird! Im-peck-able!");
-    } else if (randInt == 1) {
-      setMessage("Kaw Kaw! (That's raven speak for 'You nailed it!')");
-    } else if (randInt == 2) {
-      setMessage("That was a new bird! Great job.");
-    } else if (randInt == 3) {
-      setMessage("Someone has an eagle eye!");
-    } else if (randInt == 4) {
-      setMessage("Well done! That bird was a beauty.");
-    } else if (randInt == 5) {
-      setMessage("Correct! Pick again.");
-    }
   }
 
   function generateQuartet() {
@@ -116,6 +98,8 @@ function App() {
         prevPicked={deck[num].prevPicked}
         fact={deck[num].fact}
         setPrevPicked={() => setPrevPicked(deck[num].id)}
+        evaluate={() => evaluate(deck[num].prevPicked, deck[num].id)}
+        gameOver={gameOver}
       />
     );
   });
@@ -124,7 +108,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header count={count} message={message} />
+      <Header count={count} />
       {/* <dialog open className="modal"></dialog> */}
       <div className="container">{cardElements}</div>
     </div>
