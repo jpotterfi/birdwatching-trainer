@@ -76,6 +76,7 @@ export default function Card(props) {
         img={props.img}
         birdsong={props.birdsong}
         fact={props.fact}
+        prevPicked={props.prevPicked}
         playBirdsong={playBirdsong}
         playFact={playFact}
         hideModal={hideModal}
@@ -83,9 +84,9 @@ export default function Card(props) {
         removeBirdsongActive={removeBirdsongActive}
         addFactActive={addFactActive}
         removeFactActive={removeFactActive}
-        evaluate={props.evaluate}
         setPrevPicked={props.setPrevPicked}
-        gameOver={props.gameOver}
+        resetCount={props.resetCount}
+        resetDeck={props.resetDeck}
       />
       <div className="card" onClick={openModal}>
         <img className="card__image" src={props.img} />

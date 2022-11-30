@@ -12,23 +12,31 @@ function App() {
 
   const [count, setCount] = React.useState(0);
 
-  const [gameOver, setGameOver] = React.useState(true);
-
-  function evaluate(prevPicked, id) {
-    console.log(prevPicked);
-    if (gameOver === false && prevPicked == false) {
-      console.log("this was a new bird");
-      setPrevPicked(id);
-    }
-    if (gameOver === false && prevPicked === true) {
-      console.log("this was an old bird");
-      console.log(id);
-      setGameOver(true);
-    }
-    if (gameOver === true) {
-      console.log("reset game");
-    }
+  function resetCount() {
+    setCount(0);
   }
+
+  function resetDeck() {
+    setDeck(deckList.birdCards);
+  }
+
+  // const [gameOver, setGameOver] = React.useState(false);
+
+  // function evaluate(prevPicked, id) {
+  //   console.log(prevPicked);
+  //   if (prevPicked == false) {
+  //     console.log("this was a new bird");
+  //     setPrevPicked(id);
+  //   }
+  //   if (prevPicked === true) {
+  //     console.log("this was an old bird");
+  //     console.log(id);
+  //     setGameOver(true);
+  //   }
+  //   if (gameOver === true) {
+  //     console.log("reset game");
+  //   }
+  // }
 
   function setPrevPicked(id) {
     const modal = document.getElementById("modal" + id);
@@ -98,8 +106,9 @@ function App() {
         prevPicked={deck[num].prevPicked}
         fact={deck[num].fact}
         setPrevPicked={() => setPrevPicked(deck[num].id)}
-        evaluate={() => evaluate(deck[num].prevPicked, deck[num].id)}
-        gameOver={gameOver}
+        resetCount={resetCount}
+        resetDeck={resetDeck}
+        // evaluate={() => evaluate(deck[num].prevPicked, deck[num].id)}
       />
     );
   });
