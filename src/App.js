@@ -73,9 +73,10 @@ function App() {
 
   function generateQuartet() {
     let nums = [];
+
     for (let i = 0; i < 20; i++) {
       nums.push(i);
-    }
+    } //generates an array of 20 values: 0, 1, 2 ... 19
 
     let randArr = [];
     for (let i = 0; i < 4; i++) {
@@ -84,6 +85,29 @@ function App() {
       nums.splice(rand, 1);
     }
     return randArr;
+  }
+
+  function generateLegalQuartet() {
+    let quartet = generateQuartet();
+    let legalCards = [];
+
+    for (let i = 0; i < deck.length; i++) {
+      if (deck[i].prevPicked === false) {
+        legalCards.push(i);
+      }
+    }
+    if (
+      deck[quartet[0]].prevPicked === true &&
+      deck[quartet[1]].prevPicked === true &&
+      deck[quartet[2]].prevPicked === true &&
+      deck[quartet[3]].prevPicked === true &&
+      legalCards.length > 0
+    ) {
+      let randLegalCard = Math.floor(Math.random() * legalCards.length);
+      let randInt = Math.floor(Math.random() * 4);
+      quartet[randInt] = legalCards[randLegalCard];
+    }
+    return quartet;
   }
 
   // {
@@ -95,7 +119,7 @@ function App() {
   //   prevPicked: false,
   // },
 
-  const cardElements = generateQuartet().map(function (num) {
+  const cardElements = generateLegalQuartet().map(function (num) {
     return (
       <Card
         name={deck[num].name}
