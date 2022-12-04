@@ -1,0 +1,31 @@
+#tutModal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.tutModal__inner {
+  height: 465px;
+  width: 264px;
+  background-color: #e7e0c2;
+  border-radius: 16px;
+  padding: 0;
+  border: none;
+  margin: auto;
+  margin-top: 25%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tutModal__instructions {
+  font-size: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

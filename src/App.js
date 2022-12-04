@@ -1,16 +1,35 @@
 import "./App.css";
 import "./modal.css";
+import "./tutmodal.css";
 import React from "react";
 import deckList from "./deckList";
 import Card from "./Components/Card";
 import Header from "./Components/Header";
+import TutModal from "./Components/TutModal";
 
 // deckList.birdCards
 
 function App() {
   const [deck, setDeck] = React.useState(deckList.birdCards);
 
+  const [highscore, setHighscore] = React.useState(
+    localStorage.getItem("highscore") || 0
+  );
+
+  const [isNewPlayer, setIsNewPlayer] = React.useState(
+    localStorage.getItem("isNewPlayer") || true
+  );
   const [count, setCount] = React.useState(0);
+
+  React.useEffect(
+    function () {
+      if (count > highscore) {
+        localStorage.setItem("highscore", count);
+        setHighscore(count);
+      }
+    },
+    [count]
+  );
 
   function resetCount() {
     setCount(0);
@@ -141,7 +160,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header count={count} />
+      <Header count={count} highscore={highscore} />
+      <TutModal />
       {/* <dialog open className="modal"></dialog> */}
       <div className="container">{cardElements}</div>
     </div>

@@ -55,7 +55,7 @@ export default function Header(props) {
           {`Current Score: ` + rank + ` (${props.count})`}
         </div>
         <div className="header__rankarea__highestrank">
-          {`Highest Score: ` + rank + ` (${props.count})`}
+          {`Highest Score: ` + rank + ` (${props.highscore})`}
         </div>
       </div>
     </header>
