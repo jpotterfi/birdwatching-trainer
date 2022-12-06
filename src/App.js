@@ -32,6 +32,15 @@ function App() {
     [count]
   );
 
+  console.log("isNewPlayer ==" + isNewPlayer);
+
+  function finishTutorial() {
+    // let tutModal = document.getElementById("tutModal");
+    // tutModal.remove();
+    localStorage.setItem("isNewPlayer", false);
+    setIsNewPlayer(false);
+  }
+
   function resetCount() {
     setCount(0);
   }
@@ -162,7 +171,7 @@ function App() {
   return (
     <div className="App">
       <Header count={count} highscore={highscore} />
-      <TutModal />
+      {isNewPlayer === true && <TutModal finishTutorial={finishTutorial} />}
       {/* <dialog open className="modal"></dialog> */}
       <div className="container">{cardElements}</div>
     </div>

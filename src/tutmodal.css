@@ -34,6 +34,7 @@
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+  height: 100%;
 }
 
 .tutModal__bottom {
@@ -72,7 +73,6 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
-  padding-top: 20px;
 }
 
 .cardInstruction__group {
@@ -92,8 +92,20 @@
   padding-bottom: 5px;
 }
 
+.tutModal__pagetwo__instructions {
+  text-align: center;
+}
+
 .pagetwo__instruction {
   font-size: 20px;
+}
+
+.tutBirdsong-icon {
+  cursor: pointer;
+}
+
+.tutFact-icon {
+  cursor: pointer;
 }
 
 /* <>

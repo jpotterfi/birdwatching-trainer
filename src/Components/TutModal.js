@@ -50,11 +50,14 @@ export default function Tutmodal(props) {
           </>
         ) : (
           <>
-            <section className="tutModal__instructions">
+            <section className="tutModal__pagetwo__instructions">
               <div className="pagetwo__instruction">
-                When you select a bird, you’ll have a chance to hear the bird’s
-                song and a fact about the bird. <br></br>
-                <br></br> <span className="bold">Try it out!</span>
+                When you select a bird, you’ll have a chance to hear its unique
+                song and a short fact about it. <br></br>
+                <br></br>
+                <span className="bold">
+                  Try it out on this Northern Cardinal!
+                </span>
               </div>
             </section>
             <section className="tutModal__middle">
@@ -63,13 +66,13 @@ export default function Tutmodal(props) {
                 <div className="cardInstruction">
                   <img src={Birdsong} />
                   <div className="cardInstruction__text">
-                    Click to play/pause the bird’s song or call.
+                    Click to play/pause the birdsong or call.
                   </div>
                 </div>
                 <div className="cardInstruction">
                   <img src={Fact} />
                   <div className="cardInstruction__text">
-                    Click to play/pause a short fact about the bird.
+                    Click to play/pause a fact about the bird.
                   </div>
                 </div>
               </div>
@@ -77,7 +80,7 @@ export default function Tutmodal(props) {
             <section className="tutModal__bottom">
               <img id="backwards" src={Backwards} onClick={pageBackward} />
               <div id="pageNumber" className="pageNumber">{`${page} / 2`}</div>
-              <img id="accept" src={Accept} />
+              <img id="accept" src={Accept} onClick={props.finishTutorial} />
             </section>
           </>
         )}
