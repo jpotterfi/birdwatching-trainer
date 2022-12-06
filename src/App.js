@@ -1,6 +1,7 @@
 import "./App.css";
 import "./modal.css";
 import "./tutmodal.css";
+import "./tutcard.css";
 import React from "react";
 import deckList from "./deckList";
 import Card from "./Components/Card";

@@ -51,9 +51,10 @@ export default function Tutmodal(props) {
         ) : (
           <>
             <section className="tutModal__instructions">
-              <div className="instruction">
+              <div className="pagetwo__instruction">
                 When you select a bird, you’ll have a chance to hear the bird’s
-                song and a fact about the bird.
+                song and a fact about the bird. <br></br>
+                <br></br> <span className="bold">Try it out!</span>
               </div>
             </section>
             <section className="tutModal__middle">
@@ -62,13 +63,13 @@ export default function Tutmodal(props) {
                 <div className="cardInstruction">
                   <img src={Birdsong} />
                   <div className="cardInstruction__text">
-                    Will play the bird’s song or call.
+                    Click to play/pause the bird’s song or call.
                   </div>
                 </div>
                 <div className="cardInstruction">
                   <img src={Fact} />
                   <div className="cardInstruction__text">
-                    Will play a short fact about the bird.
+                    Click to play/pause a short fact about the bird.
                   </div>
                 </div>
               </div>

@@ -6,46 +6,83 @@ import Birdsong from "../nonbird_images/birdsong.svg";
 import Fact from "../nonbird_images/fact.svg";
 
 export default function TutCard() {
+  function playBirdsong() {
+    const birdsong = document.getElementById("tutBirdsong");
+    if (birdsong.duration > 0 && !birdsong.paused) {
+      birdsong.pause();
+    } else {
+      birdsong.play();
+    }
+  }
+  function playFact() {
+    const fact = document.getElementById("tutFact");
+
+    if (fact.duration > 0 && !fact.paused) {
+      fact.pause();
+    } else {
+      fact.play();
+    }
+  }
+
+  function addFactActive() {
+    const factIcon = document.getElementById("tutFact-icon");
+    factIcon.classList.add("active");
+  }
+
+  function removeFactActive() {
+    const factIcon = document.getElementById("tutFact-icon");
+    factIcon.classList.remove("active");
+  }
+
+  function addBirdsongActive() {
+    const factIcon = document.getElementById("tutBirdsong-icon");
+    factIcon.classList.add("active");
+  }
+
+  function removeBirdsongActive() {
+    const factIcon = document.getElementById("tutBirdsong-icon");
+    factIcon.classList.remove("active");
+  }
   return (
-    <dialog className="tutCard" id="tutCard">
+    <div className="tutCard" id="tutCard">
       <section
         className="tutCard__top"
         style={{
           backgroundImage: `url(${Northern_Cardinal_Image})`,
         }}
       >
-        <section className="tutModal__sounds">
+        <section className="tutCard__sounds">
           <img
             className="tutBirdsong-icon"
             id="tutBirdsong-icon"
-            // onClick={playBirdsong}
+            onClick={playBirdsong}
             src={Birdsong}
           />
           <audio
             id="tutBirdsong"
             src={Northern_Cardinal_Birdsong}
-            // onPlay={addBirdsongActive}
-            // onPause={removeBirdsongActive}
-            // onEnded={removeBirdsongActive}
+            onPlay={addBirdsongActive}
+            onPause={removeBirdsongActive}
+            onEnded={removeBirdsongActive}
           ></audio>
           <img
             className="tutFact-icon"
             id="tutFact-icon"
             src={Fact}
-            // onClick={playFact}
+            onClick={playFact}
           />
           <audio
             id="tutFact"
             src={Northern_Cardinal_Fact}
-            // onPlay={addFactActive}
-            // onPause={removeFactActive}
-            // onEnded={removeFactActive}
+            onPlay={addFactActive}
+            onPause={removeFactActive}
+            onEnded={removeFactActive}
           ></audio>
         </section>
       </section>
-      <section className="tutModal__bottom">
-        <h1 className="tutModal__bottom__birdName">Northern Cardinal</h1>
+      <section className="tutCard__bottom">
+        <h1 className="tutCard__bottom__birdName bold">Northern Cardinal</h1>
       </section>
-    </dialog>
+    </div>
   );
 }
