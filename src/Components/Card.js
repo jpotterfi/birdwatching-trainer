@@ -77,6 +77,7 @@ export default function Card(props) {
         birdsong={props.birdsong}
         fact={props.fact}
         prevPicked={props.prevPicked}
+        count={props.count}
         playBirdsong={playBirdsong}
         playFact={playFact}
         hideModal={hideModal}

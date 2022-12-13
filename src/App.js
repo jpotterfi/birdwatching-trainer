@@ -161,6 +161,7 @@ function App() {
         setPrevPicked={() => setPrevPicked(deck[num].id)}
         resetCount={resetCount}
         resetDeck={resetDeck}
+        count={count}
         // evaluate={() => evaluate(deck[num].prevPicked, deck[num].id)}
       />
     );
