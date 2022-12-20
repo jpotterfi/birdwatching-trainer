@@ -151,6 +151,7 @@ function App() {
   const cardElements = generateLegalQuartet().map(function (num) {
     return (
       <Card
+        key={deck[num].id}
         name={deck[num].name}
         sciName={deck[num].sciName}
         id={deck[num].id}

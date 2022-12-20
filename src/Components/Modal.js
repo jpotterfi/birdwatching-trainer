@@ -42,12 +42,22 @@ export default function Modal(props) {
     }
   }
 
+  function exitModal() {
+    const birdsong = document.getElementById("birdsong" + props.id);
+    const fact = document.getElementById("fact" + props.id);
+    birdsong.pause();
+    fact.pause();
+    props.hideModal();
+  }
+
   function resetGame() {
     setGameOver(false);
     setGameWin(false);
     props.resetCount();
     props.resetDeck();
     props.hideModal();
+    let modal = document.getElementById("modal" + props.id);
+    modal.classList.remove("gameOver");
   }
 
   return (
@@ -116,7 +126,7 @@ export default function Modal(props) {
         ) : (
           <div className="modal__bottom__buttons">
             <img id="accept" src={Accept} onClick={evaluate}></img>
-            <img id="deny" src={Deny} onClick={props.hideModal}></img>
+            <img id="deny" src={Deny} onClick={exitModal}></img>
           </div>
         )}
       </section>
